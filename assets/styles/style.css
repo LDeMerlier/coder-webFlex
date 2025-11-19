@@ -1,0 +1,118 @@
+/* Hoja de estilado (Preentrega 2) */
+
+/* Fuente NUNUITO de google */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&family=Open+Sans:wght@300;400;600&display=swap');
+
+/* Definimos variables ´ara usarlas mas abajo */
+:root {
+  --color-primario: #1a73e8;
+  --color-secundario: #0d47a1;      
+  --color-acento: #ff6f00; 
+  --color-texto: #333333; 
+  --color-fondo: #f8f9fa;
+  --color-footer: #111111;
+  --ff-titulos: 'Nunito', sans-serif; /*Fuente google*/
+  --ff-texto: 'Open Sans', sans-serif; /*fuente local*/
+}
+
+/*REset general*/
+body {
+  margin: 0;
+  font-family: var(--ff-texto);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+/* Objeto Hero */
+.hero-home {
+  background: url('../images/mundohero.png') center/cover no-repeat; /*https://www.w3schools.com/cssref/pr_background-repeat.php*/
+  padding: 10rem 1rem; /*uso tamaño relativo en rems*/
+}
+
+.hero-home h1 {
+  font-family: var(--ff-titulos);
+  font-weight: 800;
+}
+
+.hero-home p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Objetos titulo*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-titulos);
+  font-weight: 700;
+}
+
+/* NAV BAR (Bootstrap) porque tiene el sandwichito que aprece en el respodnsive pantallas chicas)*/
+.navbar-brand {
+  font-family: var(--ff-titulos);
+  font-weight: 800;
+  font-size: 1.6rem;
+}
+
+.nav-link:hover {
+  color: var(--color-acento) !important;
+}
+
+/* Objetos CARDS (Bootstrap) */
+.card {
+  transition: transform .25s ease, box-shadow .25s ease; /*https://www.w3schools.com/cssref/css3_pr_transition-timing-function.php*/
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-title {
+  font-weight: 700;
+}
+
+.card-img-top {
+  height:150px;
+  object-fit: cover;
+}
+
+/* Objetos VIDEOS (iframe en lugar de <VIDEO> xq yt! no me deja embeedings) */
+.ratio iframe {
+  border-radius: 14px;
+}
+
+/* Objetos LISTA */
+ul li::marker {
+  color: var(--color-primario);
+}
+
+ol li::marker {
+  font-weight: bold;
+  color: var(--color-acento);
+}
+
+/* Objetos SECCIONES */
+section { scroll-margin-top: 100px;}
+
+/* Objetos FOOTER */
+footer {
+  background-color: var(--color-footer);
+  color: white;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--color-acento);
+}
+
+/*Uso de responsive para los cards */
+@media (max-width: 768px) {
+  .hero-home {
+    padding: 6rem 1rem;
+    text-align: center;
+  }
+}
